@@ -1,0 +1,84 @@
+C:\wamp\bin\mysql\mysql5.7.26\bin>mysql.exe -u root --password
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 5.7.26 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> USE GCES;
+Database changed
+mysql> INSERT INTO students
+    -> (name,address,phone_number,bio,user_id)
+    -> VALUES
+    -> ("RONAK","KATHMANDU",98273789,"I like music",25),
+    -> ("Susan","LALITPUR",98192863,"I like Reading",26),
+    -> ("Asim","POKHARA",98485834,"I like Sports",30),
+    -> ("MANAN","BAGAR",987532,"I LIKE SWIMMING",35),
+    -> ("SAJAN","HEMJA",987654,"I LIKE GAMING",40);
+Query OK, 5 rows affected (0.00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM students;
++----+-------+-----------+--------------+-----------------+---------+
+| id | name  | address   | phone_number | bio             | user_id |
++----+-------+-----------+--------------+-----------------+---------+
+|  1 | RONAK | KATHMANDU |     98273789 | I like music    |      25 |
+|  2 | Susan | LALITPUR  |     98192863 | I like Reading  |      26 |
+|  3 | Asim  | POKHARA   |     98485834 | I like Sports   |      30 |
+|  4 | MANAN | BAGAR     |       987532 | I LIKE SWIMMING |      35 |
+|  5 | SAJAN | HEMJA     |       987654 | I LIKE GAMING   |      40 |
++----+-------+-----------+--------------+-----------------+---------+
+5 rows in set (0.00 sec)
+
+mysql> INSERT INTO users
+    -> (user_name,password,email)
+    -> VALUES
+    -> ("biswa3","CLFA32","biswa3@gmail.com"),
+    -> ("mazzy","dalle3","mazzy3@gmail.com"),
+    -> ("maximus","asdfas","maxim45@gmail.com"),
+    -> ("name33","asfdfe","name33@gmail.com"),
+    -> ("tiger45","eqey","tiger45@gmail.com");
+Query OK, 5 rows affected (0.00 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO addresses
+    -> (user_id,country,state,district,address_1,address_2)
+    -> VALUES
+    -> (20,"NEPAL","GANKDAKI","KASKI","BAGAR","NADIPUR"),
+    -> (34,"ITALY","VENICE","SFD","VENICE_1","VENICE_2"),
+    -> (46,"INDIA","MP","BASH","MP","DELHI"),
+    -> (50,"CHINA","XIANG","BEJING","TOKYO","BEIJING"),
+    -> (60,"NEPAL","LALITPUR","DD","KATHMANDU","POKHARA");
+
+mysql> SELECT * FROM users;
++----+-----------+----------+-------------------+
+| id | user_name | password | email             |
++----+-----------+----------+-------------------+
+|  1 | biswa3    | CLFA32   | biswa3@gmail.com  |
+|  2 | mazzy     | dalle3   | mazzy3@gmail.com  |
+|  3 | maximus   | asdfas   | maxim45@gmail.com |
+|  4 | name33    | asfdfe   | name33@gmail.com  |
+|  5 | tiger45   | eqey     | tiger45@gmail.com |
++----+-----------+----------+-------------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT * FROM addresses;
++----+---------+---------+----------+----------+-----------+-----------+
+| id | user_id | country | state    | district | address_1 | address_2 |
++----+---------+---------+----------+----------+-----------+-----------+
+|  1 |      20 | NEPAL   | GANKDAKI | KASKI    | BAGAR     | NADIPUR   |
+|  2 |      34 | ITALY   | VENICE   | SFD      | VENICE_1  | VENICE_2  |
+|  3 |      46 | INDIA   | MP       | BASH     | MP        | DELHI     |
+|  4 |      50 | CHINA   | XIANG    | BEJING   | TOKYO     | BEIJING   |
+|  5 |      60 | NEPAL   | LALITPUR | DD       | KATHMANDU | POKHARA   |
++----+---------+---------+----------+----------+-----------+-----------+
+5 rows in set (0.00 sec)
+
+mysql>
